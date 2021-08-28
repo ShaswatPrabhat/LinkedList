@@ -3,12 +3,13 @@ from LinkedList import SinglyLinkedList
 
 if __name__ == '__main__':
     singlyLinkedList = SinglyLinkedList.SinglyLinkedList([0, 1, 2, 3])
-    singlyLinkedList.traverseList()
+    # singlyLinkedList.traverseList()
     singlyLinkedList.insertAfterValue(2, 5)
-    singlyLinkedList.traverseList()
+    # singlyLinkedList.traverseList()
     singlyLinkedList.insertValueInBeginning(99)
+    singlyLinkedList.findValue(3).setNext(singlyLinkedList.findValue(1))
     singlyLinkedList.traverseList()
-    print(singlyLinkedList['1'])
+    print(singlyLinkedList.hasCycle())
     # singlyLinkedList.deleteValue(2)
     # singlyLinkedList.traverseList()
     #

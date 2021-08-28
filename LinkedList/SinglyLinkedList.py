@@ -25,11 +25,14 @@ class SinglyLinkedList:
     def traverseList(self) -> None:
         print("Traversing linked list")
         if not self.isEmptyList():
-            node = self.headOfList
-            while node.getNext() is not None:
+            if self.hasCycle():
+                print("LinkedList contains a cycle, traversal will be infinite LOL!")
+            else:
+                node = self.headOfList
+                while node.getNext() is not None:
+                    print(node.val)
+                    node = node.getNext()
                 print(node.val)
-                node = node.getNext()
-            print(node.val)
         else:
             print("EMPTY LIST!!")
 
@@ -138,3 +141,15 @@ class SinglyLinkedList:
             node = node.getNext()
             counter += 1
         return node.val
+
+    def hasCycle(self) -> bool:
+        if self.isEmptyList():
+            return False
+        slow = self.headOfList
+        fast = self.headOfList.getNext()
+        while slow.val != fast.val:
+            if fast is None or fast.getNext() is None:
+                return False
+            slow = slow.getNext()
+            fast = fast.getNext().getNext()
+        return True

@@ -93,3 +93,28 @@ class SinglyLinkedList:
             node.setNext(node.getNext().getNext())
             self.length -= 1
             return True
+
+    def insertAfterValue(self, value, valueToBeInserted) -> bool:
+        if self.isEmptyList():
+            print("Empty list")
+            return False
+
+        else:
+            node = self.headOfList
+            while node is not None:
+                if node.val == value:
+                    newNode = LinkedListNodes.SinglyLinkedNode(val=valueToBeInserted)
+                    newNode.setNext(node.getNext())
+                    node.setNext(newNode)
+                    self.length += 1
+                    return True
+                node = node.getNext()
+        return False
+
+    def insertValueInBeginning(self, value):
+        newNode = LinkedListNodes.SinglyLinkedNode(value)
+        if self.isEmptyList():
+            self.headOfList = newNode
+        else:
+            newNode.setNext(self.headOfList)
+            self.headOfList = newNode

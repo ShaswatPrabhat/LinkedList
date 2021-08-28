@@ -1,2 +1,2 @@
 # LinkedList
-LinkedList implmentation in Python
+LinkedList implementation in Python

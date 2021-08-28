@@ -6,7 +6,7 @@ class SinglyLinkedNode:
     def setNext(self, node: 'SinglyLinkedNode'):
         self.next = node
 
-    def getNext(self):
+    def getNext(self) -> 'SinglyLinkedNode' or None:
         return self.next
 
 
@@ -22,8 +22,8 @@ class DoublyLinkedNode:
     def setNext(self, node: 'DoublyLinkedNode'):
         self.next = node
 
-    def getNext(self):
+    def getNext(self) -> 'DoublyLinkedNode' or None:
         return self.next
 
-    def getPrev(self):
+    def getPrev(self) -> 'DoublyLinkedNode' or None:
         return self.prev

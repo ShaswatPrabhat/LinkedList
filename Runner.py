@@ -8,6 +8,7 @@ if __name__ == '__main__':
     singlyLinkedList.traverseList()
     singlyLinkedList.insertValueInBeginning(99)
     singlyLinkedList.traverseList()
+    print(singlyLinkedList['1'])
     # singlyLinkedList.deleteValue(2)
     # singlyLinkedList.traverseList()
     #

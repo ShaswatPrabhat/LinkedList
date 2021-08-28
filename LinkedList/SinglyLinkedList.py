@@ -118,3 +118,23 @@ class SinglyLinkedList:
         else:
             newNode.setNext(self.headOfList)
             self.headOfList = newNode
+        self.length += 1
+
+    def __getitem__(self, item):
+        if type(item) is not int:
+            print("Please enter subscriptable index integers only")
+            return None
+
+        if self.isEmptyList():
+            print("Empty list")
+            return None
+
+        if self.length < item:
+            print("Index too large, list too small")
+            return None
+        counter = 0
+        node = self.headOfList
+        while counter != item:
+            node = node.getNext()
+            counter += 1
+        return node.val
